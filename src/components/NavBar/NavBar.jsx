@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { Link } from 'react-router';
-
 import { UserContext } from '../../contexts/UserContext';
 
 const NavBar = () => {
@@ -20,7 +19,7 @@ const NavBar = () => {
           <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
         </ul>
       ) : (
-        <ul>
+        <ul className='navbar'>
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/sign-in'>Sign In</Link></li>
           <li><Link to='/sign-up'>Sign Up</Link></li>
