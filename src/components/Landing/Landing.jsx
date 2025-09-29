@@ -2,7 +2,7 @@ const Landing = () => {
   return (
     <main>
       <h1>Welcome to CookUp!</h1>
-      <p>Sign up now!</p>
+      <a className="cta" href="/sign-up">Sign up now</a>
 
       <section className="mt-8">
         <h2>Recipes</h2>
