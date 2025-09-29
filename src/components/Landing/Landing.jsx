@@ -17,25 +17,13 @@ const Landing = () => {
             <div className="recipe1-description">
               <h3 className="recipe1-title">🍝 Spaghetti Bolognese</h3>
               <p><strong>Ingredients (2 servings):</strong></p>
-              <ul className="recipe1-ingredients">
-                <li>200g spaghetti</li>
-                <li>200g ground beef (or ground turkey)</li>
-                <li>1 medium onion, chopped</li>
-                <li>2 garlic cloves, minced</li>
-                <li>1 can (400g) chopped tomatoes</li>
-                <li>2 tbsp tomato paste</li>
-                <li>1 tbsp olive oil</li>
-                <li>1 tsp dried oregano</li>
-                <li>Salt and pepper to taste</li>
-                <li>Grated Parmesan (optional)</li>
-              </ul>
               <p className="recipe1-instructions"><strong>Instructions:</strong></p>
               <ol className="recipe1-list">
                 <li>Cook spaghetti according to package instructions; drain and set aside.</li>
                 <li>Heat olive oil in a pan, sauté onion and garlic until soft.</li>
                 <li>Add ground beef, cook until browned.</li>
                 <li>Stir in tomato paste, chopped tomatoes, oregano, salt, and pepper.</li>
-                <li>Simmer for 15–20 minutes until sauce thickens.</li>
+                <li>Simmer for 15 - 20 minutes until sauce thickens.</li>
                 <li>Serve sauce over spaghetti and top with Parmesan if desired.</li>
               </ol>
             </div>
@@ -50,13 +38,6 @@ const Landing = () => {
             <div className="recipe2-description">
               <h3 className="recipe2-title">Avocado Toast</h3>
               <p><strong>Ingredients (1 serving):</strong></p>
-              <ul className="recipe2-ingredients">
-                <li>1 ripe avocado</li>
-                <li>2 slices of bread (sourdough or whole grain)</li>
-                <li>1 tsp olive oil (optional)</li>
-                <li>Salt and pepper to taste</li>
-                <li>Optional: red pepper flakes, cherry tomatoes, feta, poached egg</li>
-              </ul>
               <p className="recipe2-instructions"><strong>Instructions:</strong></p>
               <ol className="recipe2-list">
                 <li>Toast the bread until golden and crispy.</li>
