@@ -10,7 +10,7 @@ const Landing = () => {
 
           <div className="recipe1">
             <img
-              src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=250&fit=crop"
+              src="https://images.unsplash.com/photo-1653122025256-d1ac2880c511?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Spaghetti Bolognese"
               className="recipe1-img"
             />
@@ -43,7 +43,7 @@ const Landing = () => {
 
           <div className="recipe2">
             <img
-              src="https://images.unsplash.com/photo-1704545229893-4f1bb5ef16a1?q=80&w=400&h=250&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1650092194571-d3c1534562be?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Avocado Toast"
               className="recipe2-img"
             />

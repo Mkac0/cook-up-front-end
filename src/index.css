@@ -13,11 +13,61 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 24px;
+.site-header{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:12px 24px;
+  position:sticky; top:0;
+  background:#1f1f22cc;
+  backdrop-filter:saturate(160%) blur(6px);
+  border-bottom:1px solid #33363d;
+}
+
+.brand{
+  margin-right:auto;
+  font-weight:800;
+  letter-spacing:.2px;
+  color:#fff;
+  text-decoration:none;
+}
+.brand span{color:#646cff}
+
+.nav-items{
+  list-style:none;
+  display:flex;
+  gap:14px;
+  margin:0;
+  padding:0;
+}
+.nav-items li{margin:0;}
+
+.nav-items a{
+  display:inline-block;
+  padding:8px 10px;
+  color:#b8b9bc;
+  text-decoration:none;
+  border-radius:10px;
+  transition:background .15s ease, color .15s ease, transform .15s ease;
+}
+.nav-items a:hover{
+  background:#33363d;
+  color:#e9e9ee;
+  transform:translateY(-1px);
+}
+
+.sign-up-nav{
+  background:#646cff;
+  color:#0d0f14;
+  font-weight:700;
+  padding:8px 14px;
+  border-radius:999px;
+}
+.sign-up-nav:hover{ filter:brightness(1.06); }
+
+.welcome-user{
+  color: #9aa0a6;
+  cursor: default;
 }
 
 .cta {

@@ -12,17 +12,19 @@ const NavBar = () => {
 
   return (
     <nav>
+      <header className='site-header'>
+        <Link to="/" className='brand'>Cook<span>'</span>Up</Link>
+      </header>
       {user ? (
-        <ul>
-          <li>Welcome, {user.username}</li>
-          <li><Link to='/'>Dashboard</Link></li>
-          <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
+        <ul className="nav-items">
+          <li className="welcome-user">Welcome, {user.username}</li>
+          <li><Link to="/">Dashboard</Link></li>
+          <li><Link to="/" onClick={handleSignOut}>Sign Out</Link></li>
         </ul>
       ) : (
-        <ul className='navbar'>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/sign-in'>Sign In</Link></li>
-          <li><Link to='/sign-up'>Sign Up</Link></li>
+        <ul className='nav-items'>
+          <li><Link to='/sign-in' className='sign-in-nav'>Sign In</Link></li>
+          <li><Link to='/sign-up' className='sign-up-nav'>Sign Up</Link></li>
         </ul>
       )}
     </nav>
