@@ -11,10 +11,8 @@ const NavBar = () => {
   };
 
   return (
-    <nav>
-      <header className='site-header'>
+    <nav className='site-header'>
         <Link to="/" className='brand'>Cook<span>'</span>Up</Link>
-      </header>
       {user ? (
         <ul className="nav-items">
           <li><Link to='/recipes'>Recipes</Link></li>

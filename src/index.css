@@ -13,7 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.site-header{
+.site-header {
   display:flex;
   align-items:center;
   gap:20px;
@@ -24,25 +24,41 @@
   border-bottom:1px solid #33363d;
 }
 
-.brand{
+.brand {
   margin-right:auto;
   font-weight:800;
   letter-spacing:.2px;
   color:#fff;
   text-decoration:none;
 }
-.brand span{color:#646cff}
+.brand span {
+  color:#646cff
+}
 
-.nav-items{
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  background: #1f1f22cc;
+  backdrop-filter: saturate(160%) blur(6px);
+  border-bottom: 1px solid #33363d;
+}
+
+.nav-items {
   list-style:none;
   display:flex;
   gap:14px;
   margin:0;
   padding:0;
 }
-.nav-items li{margin:0;}
+.nav-items li {
+  margin:0;
+}
 
-.nav-items a{
+.nav-items a {
   display:inline-block;
   padding:8px 10px;
   color:#b8b9bc;
@@ -50,20 +66,22 @@
   border-radius:10px;
   transition:background .15s ease, color .15s ease, transform .15s ease;
 }
-.nav-items a:hover{
+.nav-items a:hover {
   background:#33363d;
   color:#e9e9ee;
   transform:translateY(-1px);
 }
 
-.sign-up-nav{
+.sign-up-nav {
   background:#646cff;
   color:#0d0f14;
   font-weight:700;
   padding:8px 14px;
   border-radius:999px;
 }
-.sign-up-nav:hover{ filter:brightness(1.06); }
+.sign-up-nav:hover { 
+  filter:brightness(1.06); 
+}
 
 .welcome-user{
   color: #9aa0a6;
@@ -79,7 +97,10 @@
   font-weight: 600;
   transition: filter .2s ease, transform .2s ease;
 }
-.cta:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.cta:hover { 
+  filter: brightness(1.05); 
+  transform: translateY(-1px); 
+}
 
 a {
   font-weight: 500;
