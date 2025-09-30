@@ -14,24 +14,24 @@ const RecipeDetails = () => {
     useEffect(() => {
         const fetchRecipe = async () => {
             const recipeData = await recipeService.show(recipeId);
-            console.log("fetched data = ", recipeData);
             setRecipe(recipeData);
         };
         fetchRecipe();
     }, [recipeId]);
 
-    //console.log("recipe data = ", recipe);
     return (
         <main>
             <section>
                 <header>
                     <h1>{recipe.recipeName}</h1>
-                    <p>Prep Time:{recipe.prepTime}</p>
-                    <p>Cook Time:{recipe.cookTime}</p>
-                    <p>Servings:{recipe.servings}</p>
-                    <p>Meal Type:{recipe.mealType}</p>
-                    <p>Dietary Preferance:{recipe.dietaryPreferance}</p>
-                    <p>Description: {recipe.description}</p>
+                    <div>
+                        <p>Prep Time:{recipe.prepTime}</p>
+                        <p>Cook Time:{recipe.cookTime}</p>
+                        <p>Servings:{recipe.servings}</p>
+                        <p>Meal Type:{recipe.mealType}</p>
+                        <p>Dietary Preferance:{recipe.dietaryPreferance}</p>
+                        <p>Description: {recipe.description}</p>
+                    </div>
                     <div>
                         <h2>Ingredients:</h2>
                         <ul>
