@@ -2,23 +2,35 @@ import { useEffect, useState, useContext } from 'react';
 
 import { UserContext } from '../../contexts/UserContext';
 
-import * as userService from '../../services/userService';
+import * as RecipeService from '../../services/RecipeService';
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
-  const [ users, setUsers ] = useState([]);
+  const [ recipes, setRecipes ] = useState([]);
 
   useEffect(() => {
-    const fetchUsers = async () => {
+    const fetchAllRecipes = async () => {
       try {
-        const fetchedUsers = await userService.index();
-        setUsers(fetchedUsers);
+        const recipeData = await RecipeService.index();
+        setRecipes(recipeData);
       } catch (err) {
         console.log(err)
       }
     }
-    if (user) fetchUsers();
-  }, [user]);
+    if (user) fetchAllRecipes();
+  }, [user])
+
+  // useEffect(() => {
+  //   const fetchUsers = async () => {
+  //     try {
+  //       const fetchedUsers = await userService.index();
+  //       setUsers(fetchedUsers);
+  //     } catch (err) {
+  //       console.log(err)
+  //     }
+  //   }
+  //   if (user) fetchUsers();
+  // }, [user]);
 
   return (
     <main>
@@ -27,8 +39,8 @@ const Dashboard = () => {
         Saved Recipes
       </p>
       <ul>
-        {users.map(user => (
-          <li key={user._id}>{user.username}</li>
+        {recipes.map(recipe => (
+          <li key={recipe._id}>{recipe.username}</li>
         ))}
       </ul>
     </main>

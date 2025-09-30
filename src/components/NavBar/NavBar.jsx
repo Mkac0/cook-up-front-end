@@ -17,7 +17,7 @@ const NavBar = () => {
       </header>
       {user ? (
         <ul className="nav-items">
-          <li className="welcome-user">Welcome, {user.username}</li>
+          <li><Link to='/recipes'>Recipes</Link></li>
           <li><Link to="/">Dashboard</Link></li>
           <li><Link to="/" onClick={handleSignOut}>Sign Out</Link></li>
         </ul>
