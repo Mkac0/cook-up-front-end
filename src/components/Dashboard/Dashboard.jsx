@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
-
+import { Link } from "react-router";
 import { UserContext } from '../../contexts/UserContext';
 
 import * as recipeService from '../../services/RecipeService';
@@ -40,7 +40,7 @@ const Dashboard = () => {
       </p>
       <ul>
         {recipes.map(recipe => (
-          <li key={recipe._id}>{recipe.recipeName}</li>
+          <li><Link key={recipe._id} to={`/recipes/${recipe._id}`}>{recipe.recipeName}</Link></li>
         ))}
       </ul>
     </main>
