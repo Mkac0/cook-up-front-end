@@ -40,7 +40,7 @@ const Dashboard = () => {
       </p>
       <ul>
         {recipes.map(recipe => (
-          <li key={recipe._id}>{recipe.username}</li>
+          <li key={recipe._id}>{recipe.recipeName}</li>
         ))}
       </ul>
     </main>
