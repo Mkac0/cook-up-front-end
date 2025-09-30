@@ -20,18 +20,6 @@ const Dashboard = () => {
     if (user) fetchAllRecipes();
   }, [user])
 
-  // useEffect(() => {
-  //   const fetchUsers = async () => {
-  //     try {
-  //       const fetchedUsers = await userService.index();
-  //       setUsers(fetchedUsers);
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   }
-  //   if (user) fetchUsers();
-  // }, [user]);
-
   return (
     <main>
       <h1>Welcome, {user.username}</h1>
@@ -40,7 +28,7 @@ const Dashboard = () => {
       </p>
       <ul>
         {recipes.map(recipe => (
-          <li key={recipe._id}>{recipe.recipeName}</li>
+          <Link key={recipe._id} to={`/recipes/${recipe._id}`}><li key={recipe._id}>{recipe.recipeName}</li></Link>
         ))}
       </ul>
     </main>
