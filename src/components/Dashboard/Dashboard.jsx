@@ -2,16 +2,16 @@ import { useEffect, useState, useContext } from 'react';
 
 import { UserContext } from '../../contexts/UserContext';
 
-import * as RecipeService from '../../services/RecipeService';
+import * as recipeService from '../../services/RecipeService';
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
-  const [ recipes, setRecipes ] = useState([]);
+  const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     const fetchAllRecipes = async () => {
       try {
-        const recipeData = await RecipeService.index();
+        const recipeData = await recipeService.index();
         setRecipes(recipeData);
       } catch (err) {
         console.log(err)
@@ -40,7 +40,7 @@ const Dashboard = () => {
       </p>
       <ul>
         {recipes.map(recipe => (
-          <li key={recipe._id}>{recipe.username}</li>
+          <li key={recipe._id}>{recipe.recipeName}</li>
         ))}
       </ul>
     </main>
