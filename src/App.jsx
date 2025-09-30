@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router';
+import { Routes, Route, useNavigate } from 'react-router';
 import './App.css';
 
 import NavBar from './components/NavBar/NavBar';
@@ -9,13 +9,27 @@ import Landing from './components/Landing/Landing';
 import Dashboard from './components/Dashboard/Dashboard';
 import RecipeList from './components/RecipeList/RecipeList';
 import RecipeDetails from './components/RecipeDetails/RecipeDetails';
+import RecipeForm from './components/RecipeForm/RecipeForm';
 
 import { UserContext } from './contexts/UserContext';
 import { RecipeContext } from './contexts/RecipeContext';
+import * as recipeService from './services/RecipeService';
 
 const App = () => {
   const { user } = useContext(UserContext);
+  const [recipes, setRecipes] = useState([]);
+  const navigate = useNavigate();
 
+  const handleDeleteRecipe = async (recipeId) => {
+    const deletedRecipe = await recipeService.deleteRecipe(recipeId);
+    setRecipes(recipes.filter((recipe) => recipe._id !== deletedRecipe._id));
+    navigate('/');
+  };
+  const handleUpdateRecipe = async (recipeId, recipeFormData) => {
+    const updatedRecipe = await recipeService.update(recipeId, recipeFormData);
+    setRecipes(recipes.map((recipe) => (recipeId === recipe._id ? updatedRecipe : recipe)));
+    navigate(`/recipe/${recipeId}`);
+  };
   return (
     <>
       <NavBar />
@@ -26,7 +40,11 @@ const App = () => {
             <Route path='/recipes' element={<RecipeList />} />
             <Route
               path='/recipes/:recipeId'
-              element={<RecipeDetails />}
+              element={<RecipeDetails handleDeleteRecipe={handleDeleteRecipe} />}
+            />
+            <Route
+              path='/recipes/:recipeId/edit'
+              element={<RecipeForm handleUpdateRecipe={handleUpdateRecipe} />}
             />
           </>
         ) : (

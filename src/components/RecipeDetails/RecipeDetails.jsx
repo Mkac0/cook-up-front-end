@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router';
 import * as recipeService from '../../services/RecipeService';
 import { UserContext } from '../../contexts/UserContext';
 
-const RecipeDetails = () => {
+const RecipeDetails = (props) => {
     const { recipeId } = useParams();
     console.log("recipeid = ", recipeId);
 
@@ -61,6 +61,14 @@ const RecipeDetails = () => {
                         </ul>
                     </div>
                 </header>
+            </section>
+            <section>
+                {recipe.author._id === user._id && (
+                    <>
+                        <Link to={`/recipes/${recipeId}/edit`}>Edit</Link>
+                        <button onClick={() => props.handleDeleteRecipe(recipeId)}>Delete</button>
+                    </>
+                )}
             </section>
         </main>
     )
