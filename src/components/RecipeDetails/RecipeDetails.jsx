@@ -5,7 +5,7 @@ import { UserContext } from '../../contexts/UserContext';
 
 const RecipeDetails = (props) => {
     const { recipeId } = useParams();
-    console.log("recipeid = ", recipeId);
+    //console.log("recipeid = ", recipeId);
 
     // Access the user object from the UserContext
     const { user } = useContext(UserContext);
@@ -56,10 +56,13 @@ console.log(recipe);
                             ))}
                         </ul>
                     </div>
-                    <div>
-                        <h2>Chef Notes:</h2>
-                        <p>{recipe.chefNotes}</p>
-                    </div>
+                    {recipe.chefNotes ? (
+                        <div>
+                            <h2>Chef Notes:</h2>
+                            <p>{recipe.chefNotes}</p>
+                        </div>
+                    ) : <div></div>
+                    }
                     <div>
                         <h2>Comments:</h2>
                         <ul>
@@ -73,8 +76,8 @@ console.log(recipe);
             <section>
                 {recipe.author._id === user._id && (
                     <>
-                        <Link to={`/recipes/${recipeId}/edit`}>Edit</Link>
-                        <button onClick={() => props.handleDeleteRecipe(recipeId)}>Delete</button>
+                        <Link to={`/recipes/${recipeId}/comments/new`}>Add Comments</Link>
+                        <button onClick={() => props.handleDeleteRecipe(recipeId)}>Delete Recipe</button>
                     </>
                 )}
             </section>

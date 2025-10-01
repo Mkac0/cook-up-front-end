@@ -73,10 +73,27 @@ const create = async (recipeFormData) => {
   }
 };
 
+//Comments
+const createComment = async (recipeId, commentFormData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${recipeId}/comments/new`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(commentFormData),
+    });
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
 export {
     index,
     show,
     deleteRecipe,
     update,
     create,
+    createComment,
 }
