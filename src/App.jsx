@@ -10,6 +10,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import RecipeList from './components/RecipeList/RecipeList';
 import RecipeDetails from './components/RecipeDetails/RecipeDetails';
 import RecipeForm from './components/RecipeForm/RecipeForm';
+import CommentForm from './components/CommentForm/CommentForm';
 
 import { UserContext } from './contexts/UserContext';
 import { RecipeContext } from './contexts/RecipeContext';
@@ -35,6 +36,12 @@ const App = () => {
     setRecipes(recipes.map((recipe) => (recipeId === recipe._id ? updatedRecipe : recipe)));
     navigate(`/recipe/${recipeId}`);
   };
+  const handleUpdateComment = async (recipeId, commentFormData) => {
+    console.log("commentFormData=", commentFormData);
+    const updatedComment = await recipeService.createComment(recipeId, commentFormData);
+    setRecipes(recipes.map((recipe) => (recipeId === recipe._id ? updatedComment : recipe)));
+    navigate(`/recipes/${recipeId}/comments/new`);
+  };
   return (
     <>
       <NavBar />
@@ -52,6 +59,7 @@ const App = () => {
               path='/recipes/:recipeId/edit'
               element={<RecipeForm handleUpdateRecipe={handleUpdateRecipe} />}
             />
+            <Route path="/recipes/:recipeId/comments/new" element={<CommentForm handleUpdateComment={handleUpdateComment} />} />
           </>
         ) : (
           <>
