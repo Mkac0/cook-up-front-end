@@ -56,9 +56,27 @@ async function update(recipeId, recipeFormData) {
     console.log(error);
   }
 }
+const create = async (recipeFormData) => {
+  console.log("new recipe form data = ",recipeFormData);
+  try {
+    const res = await fetch(`${BASE_URL}/new`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(recipeFormData),
+    });
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export {
     index,
     show,
     deleteRecipe,
     update,
+    create,
 }

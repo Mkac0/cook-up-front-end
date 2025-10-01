@@ -12,10 +12,10 @@ const NavBar = () => {
 
   return (
     <nav className='site-header'>
-        <Link to="/" className='brand'>Cook<span>'</span>Up</Link>
+      <Link to="/" className='brand'>Cook<span>'</span>Up</Link>
       {user ? (
         <ul className="nav-items">
-          <li><Link to='/recipes'>Recipes</Link></li>
+          <li><Link to='/recipe/new'>Generate Recipe</Link></li>
           <li><Link to="/">Dashboard</Link></li>
           <li><Link to="/" onClick={handleSignOut}>Sign Out</Link></li>
         </ul>

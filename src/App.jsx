@@ -20,6 +20,11 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const navigate = useNavigate();
 
+  const handleAddRecipe = async (recipeFormData) => {
+    const newRecipe = await recipeService.create(recipeFormData);
+    setRecipes([newRecipe, ...recipes]);
+    navigate('/');
+  };
   const handleDeleteRecipe = async (recipeId) => {
     const deletedRecipe = await recipeService.deleteRecipe(recipeId);
     setRecipes(recipes.filter((recipe) => recipe._id !== deletedRecipe._id));
@@ -42,6 +47,7 @@ const App = () => {
               path='/recipes/:recipeId'
               element={<RecipeDetails handleDeleteRecipe={handleDeleteRecipe} />}
             />
+            <Route path='/recipe/new' element={<RecipeForm handleAddRecipe={handleAddRecipe} />} />
             <Route
               path='/recipes/:recipeId/edit'
               element={<RecipeForm handleUpdateRecipe={handleUpdateRecipe} />}

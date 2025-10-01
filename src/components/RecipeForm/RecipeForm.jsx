@@ -21,8 +21,8 @@ const RecipeForm = (props) => {
         if (recipeId) {
             props.handleUpdateRecipe(recipeId, formData);
         } else {
-            //props.handleAddRecipe(formData);
             console.log("add new recipe");
+            props.handleAddRecipe(formData);
         }
     };
     useEffect(() => {
