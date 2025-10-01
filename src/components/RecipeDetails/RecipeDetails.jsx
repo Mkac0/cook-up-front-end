@@ -52,7 +52,7 @@ console.log(recipe);
                         <h2>Instructions:</h2>
                         <ul>
                             {recipe.instructions.map((instruction) => (
-                                <li key={instruction.step}>{instruction.description}</li>
+                                <li key={instruction.step}>{instruction}</li>
                             ))}
                         </ul>
                     </div>
