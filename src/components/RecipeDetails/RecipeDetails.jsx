@@ -19,6 +19,14 @@ const RecipeDetails = (props) => {
         fetchRecipe();
     }, [recipeId]);
 
+    if (!recipe) {
+        return (
+            <div>
+                loading
+            </div>
+        );
+    }
+    
     return (
         <main>
             <section>
