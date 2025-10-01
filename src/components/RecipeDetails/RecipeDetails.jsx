@@ -18,7 +18,7 @@ const RecipeDetails = (props) => {
         };
         fetchRecipe();
     }, [recipeId]);
-
+console.log(recipe);
     if (!recipe) {
         return (
             <div>
@@ -52,7 +52,7 @@ const RecipeDetails = (props) => {
                         <h2>Instructions:</h2>
                         <ul>
                             {recipe.instructions.map((instruction) => (
-                                <li key={instruction}>{instruction}</li>
+                                <li key={instruction.step}>{instruction.description}</li>
                             ))}
                         </ul>
                     </div>
