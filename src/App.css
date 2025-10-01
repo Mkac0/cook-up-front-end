@@ -147,14 +147,6 @@ body {
   border-color: rgba(148,163,184,.45);
 }
 
-<<<<<<< HEAD
-
-
-
-/* ============================= */
-/* Recipe Form Custom Styling    */
-/* ============================= */
-
 .recipe-form {
   padding: 2rem;
   background: linear-gradient(145deg, #1a1d26, #0c0e13);
@@ -240,7 +232,6 @@ body {
     transform: translateY(0);
   }
 }
-=======
 .page {
   max-width: 1100px;
   margin-inline: auto;
@@ -366,4 +357,4 @@ body {
 .width2 {
   width: 40%;
 }
->>>>>>> 2c91ee65e818778c20acb2c01b6ac7d2e15975d8
+
