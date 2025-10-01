@@ -18,7 +18,14 @@ const RecipeDetails = (props) => {
         };
         fetchRecipe();
     }, [recipeId]);
-console.log(recipe);
+    //console.log(recipe);
+     const handleDeleteComment = async (commentId) => {        
+        setRecipe({
+            ...recipe,
+            comments: recipe.comments.filter((comment) => comment._id !== commentId),
+        });
+    };
+
     if (!recipe) {
         return (
             <div>
@@ -27,6 +34,7 @@ console.log(recipe);
         );
     }
 
+    console.log("recipe = ",recipe);
     return (
         <main>
             <section>
@@ -51,8 +59,8 @@ console.log(recipe);
                     <div>
                         <h2>Instructions:</h2>
                         <ul>
-                            {recipe.instructions.map((instruction) => (
-                                <li key={instruction.step}>{instruction}</li>
+                            {recipe.instructions.map((instruction,index) => (
+                                <li key={index}>{instruction}</li>
                             ))}
                         </ul>
                     </div>
@@ -67,7 +75,11 @@ console.log(recipe);
                         <h2>Comments:</h2>
                         <ul>
                             {recipe.comments.map((comment) => (
-                                <li key={comment._id}>{comment.text}</li>
+                                <li key={comment._id}>
+                                    {comment.text} 
+                                    <button type="button" id="btnEditComment">Edit Comment</button> 
+                                    <button type="button" id="btnDeleteComment" onClick={()=>handleDeleteComment(comment._id)}>Delete Comment</button>
+                                </li>                                                                
                             ))}
                         </ul>
                     </div>
