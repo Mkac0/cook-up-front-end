@@ -76,7 +76,7 @@ console.log(recipe);
             <section>
                 {recipe.author._id === user._id && (
                     <>
-                        <Link to={`/recipes/${recipeId}/comments/new`}>Edit Comments</Link>
+                        <Link to={`/recipes/${recipeId}/comments/new`}>Add Comments</Link>
                         <button onClick={() => props.handleDeleteRecipe(recipeId)}>Delete Recipe</button>
                     </>
                 )}
