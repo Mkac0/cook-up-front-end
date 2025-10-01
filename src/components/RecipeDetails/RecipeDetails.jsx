@@ -26,7 +26,7 @@ const RecipeDetails = (props) => {
             </div>
         );
     }
-    
+
     return (
         <main>
             <section>
@@ -44,7 +44,7 @@ const RecipeDetails = (props) => {
                         <h2>Ingredients:</h2>
                         <ul>
                             {recipe.ingredients.map((contents) => (
-                                <li>{contents.item}</li>
+                                <li key={contents.item}>{contents.item}</li>
                             ))}
                         </ul>
                     </div>
@@ -52,7 +52,7 @@ const RecipeDetails = (props) => {
                         <h2>Instructions:</h2>
                         <ul>
                             {recipe.instructions.map((instruction) => (
-                                <li>{instruction}</li>
+                                <li key={instruction}>{instruction}</li>
                             ))}
                         </ul>
                     </div>

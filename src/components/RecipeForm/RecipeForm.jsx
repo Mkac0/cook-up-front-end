@@ -7,9 +7,9 @@ const RecipeForm = (props) => {
     const { recipeId } = useParams();
 
     const [formData, setFormData] = useState({
-        title: '',
-        text: '',
-        category: 'News',
+        contents: '',
+        meal_type: 'any',
+        dietary_preference: 'none',
     });
 
     const handleChange = (evt) => {
@@ -33,7 +33,7 @@ const RecipeForm = (props) => {
         if (recipeId) fetchRecipe();
 
         // Add a cleanup function
-        return () => setFormData({ contents: '', meal_type: '', dietary_preference: 'None' });
+        return () => setFormData({ contents: '', meal_type: 'any', dietary_preference: 'None' });
     }, [recipeId]);
 
     return (
