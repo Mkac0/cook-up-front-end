@@ -164,7 +164,6 @@ body {
   font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2rem);
   font-weight: 700;
   background: linear-gradient(90deg, var(--brand), var(--brand-600));
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -357,4 +356,3 @@ body {
 .width2 {
   width: 40%;
 }
-

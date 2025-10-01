@@ -3,14 +3,16 @@ import { useParams } from 'react-router';
 import * as recipeService from '../../services/RecipeService';
 import "../../App.css"
 
+const defaultForm = {
+  contents: '',
+  meal_type: 'any',
+  dietary_preference: 'none',
+}
+
 const RecipeForm = (props) => {
   const { recipeId } = useParams();
 
-  const [formData, setFormData] = useState({
-    contents: '',
-    meal_type: 'any',
-    dietary_preference: 'none',
-  });
+  const [formData, setFormData] = useState(defaultForm);
 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
@@ -33,7 +35,7 @@ const RecipeForm = (props) => {
     };
     if (recipeId) fetchRecipe();
 
-    return () => setFormData({ contents: '', meal_type: 'any', dietary_preference: 'None' });
+    return (setFormData(defaultForm));
   }, [recipeId]);
 
   return (
