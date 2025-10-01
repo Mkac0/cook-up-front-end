@@ -18,7 +18,7 @@ const RecipeDetails = (props) => {
         };
         fetchRecipe();
     }, [recipeId]);
-
+console.log(recipe);
     if (!recipe) {
         return (
             <div>
