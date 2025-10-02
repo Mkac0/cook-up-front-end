@@ -3,58 +3,50 @@ import { useParams, useNavigate } from 'react-router';
 import * as recipeService from '../../services/RecipeService';
 
 const CommentForm = (props) => {
-    const { recipeId, commentId } = useParams();
+    const { recipeId } = useParams();
     const navigate = useNavigate();
-
     const [formData, setFormData] = useState({
         comments: '',
     });
-
     const handleChange = (evt) => {
         setFormData({ ...formData, [evt.target.name]: evt.target.value });
     };
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        if (recipeId && commentId) {
-            props.handleUpdateComment(recipeId, formData);
-        }
-        else {
-            props.handleAddComment(recipeId, formData);
-        }
-        setFormData({ comments: '' });
-        navigate(`/recipes/${recipeId}`);
+        console.log('added new comment');
+        props.handleUpdateComment(recipeId, formData);
     };
     const handleCancel = () => {
-        navigate(`/recipes/${recipeId}`); // Or navigate(-1) to go back
+        navigate(`/recipes/${recipeId}`);
     };
-
-    useEffect(() => {
-        const fetchRecipe = async () => {
-            const recipeData = await recipeService.show(recipeId);
-            // Find comment in fetched recipe data
-            setFormData(recipeData.comments.find((comment) => comment._id === commentId));
-        };
-        if (recipeId && commentId) fetchRecipe();
-    }, [recipeId, commentId]);
-
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='comments-input'>Comments</label>
+        <main className="add-comment-page">
+        <div className="add-comment-card">
+            <h2>Add Your Comment</h2>
+            <form className="form" onSubmit={handleSubmit}>
+            <div className="form-row">
+                <label className="label" htmlFor="comments-input">Comment</label>
                 <textarea
-                    required
-                    rows={5}
-                    cols={20}
-                    name='comments'
-                    id='comments-input'
-                    value={formData.comments}
-                    onChange={handleChange}
+                className="input"
+                required
+                rows={5}
+                cols={20}
+                name="comments"
+                id="comments-input"
+                value={formData.comments}
+                onChange={handleChange}
+                placeholder="Write your comment..."
                 />
-                <button type='submit'>Submit</button>
-                <button type="button" onClick={handleCancel}>Cancel</button>
+            </div>
+            <div className="actions">
+                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="button" className="btn btn-ghost" onClick={handleCancel}>
+                Cancel
+                </button>
+            </div>
             </form>
         </div>
-    )
-}
-
-export default CommentForm
+        </main>
+  );
+};
+export default CommentForm;
