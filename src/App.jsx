@@ -72,7 +72,7 @@ const App = () => {
             <Route path="/recipes/:recipeId/comments/new" element={<CommentForm handleAddComment={handleAddComment} />} />
             <Route
               path='/recipes/:recipeId/comments/:commentId/edit'
-              element={<CommentForm handleUpdateComment={handleUpdateComment} />}
+              element={<CommentForm handleAddComment={handleAddComment} handleUpdateComment={handleUpdateComment} />}
             />
           </>
         ) : (
