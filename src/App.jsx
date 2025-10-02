@@ -38,8 +38,8 @@ const App = () => {
   };
   const handleAddComment = async (recipeId, commentFormData) => {
     //console.log("commentFormData=", commentFormData);
-    const updatedComment = await recipeService.createComment(recipeId, commentFormData);
-    setRecipes(recipes.map((recipe) => (recipeId === recipe._id ? updatedComment : recipe)));
+    const addedComment = await recipeService.createComment(recipeId, commentFormData);
+    setRecipes(recipes.map((recipe) => (recipeId === recipe._id ? addedComment : recipe)));
     navigate(`/recipes/${recipeId}`);
   };
   const handleDeleteComment = async (recipeId, commentFormData) => {
@@ -47,7 +47,11 @@ const App = () => {
     //setRecipes(recipes.map((recipe) => (recipeId === recipe._id ? updatedComment : recipe)));
     window.location.reload(true);
   };
-
+  const handleUpdateComment = async (recipeId, commentId, commentFormData) => {
+    const updatedComment = await recipeService.updateComment(recipeId, commentId, commentFormData);
+    //setRecipes(recipes.map((recipe) => (recipeId === recipe._id ? updatedComment : recipe)));
+    navigate(`/recipes/${recipeId}`);
+  };
   return (
     <>
       <NavBar />
@@ -66,6 +70,10 @@ const App = () => {
               element={<RecipeForm handleUpdateRecipe={handleUpdateRecipe} />}
             />
             <Route path="/recipes/:recipeId/comments/new" element={<CommentForm handleAddComment={handleAddComment} />} />
+            <Route
+              path='/recipes/:recipeId/comments/:commentId/edit'
+              element={<CommentForm handleUpdateComment={handleUpdateComment} />}
+            />
           </>
         ) : (
           <>

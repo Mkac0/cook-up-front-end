@@ -90,7 +90,7 @@ const createComment = async (recipeId, commentFormData) => {
   }
 };
 const deleteComment = async (recipeId, commentId) => {
-  console.log(recipeId, commentId);
+  //console.log(recipeId, commentId);
   try {
     const res = await fetch(`${BASE_URL}/${recipeId}/comments/${commentId}`, {
       method: 'DELETE',
@@ -103,6 +103,23 @@ const deleteComment = async (recipeId, commentId) => {
     console.log(error);
   }
 };
+const updateComment = async (recipeId, commentId, commentFormData) => {
+  console.log("update comment..");
+  try {
+    const res = await fetch(`${BASE_URL}/${recipeId}/comments/${commentId}/edit`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(commentFormData),
+    });
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export {
     index,
     show,
@@ -111,4 +128,5 @@ export {
     create,
     createComment,
     deleteComment,
+    updateComment,
 }

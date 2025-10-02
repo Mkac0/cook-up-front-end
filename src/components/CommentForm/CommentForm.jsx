@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router';
 import * as recipeService from '../../services/RecipeService';
 
 const CommentForm = (props) => {
-    const { recipeId } = useParams();
+    const { recipeId, commentId } = useParams();
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -15,13 +15,27 @@ const CommentForm = (props) => {
     };
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        props.handleAddComment(recipeId, formData);
+        if (recipeId && commentId) {
+            props.handleUpdateComment(recipeId, formData);
+        }
+        else {
+            props.handleAddComment(recipeId, formData);
+        }
         setFormData({ comments: '' });
         navigate(`/recipes/${recipeId}`);
     };
     const handleCancel = () => {
         navigate(`/recipes/${recipeId}`); // Or navigate(-1) to go back
     };
+
+    useEffect(() => {
+        const fetchRecipe = async () => {
+            const recipeData = await recipeService.show(recipeId);
+            // Find comment in fetched recipe data
+            setFormData(recipeData.comments.find((comment) => comment._id === commentId));
+        };
+        if (recipeId && commentId) fetchRecipe();
+    }, [recipeId, commentId]);
 
     return (
         <div>

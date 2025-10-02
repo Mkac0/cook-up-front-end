@@ -113,7 +113,7 @@ const RecipeDetails = (props) => {
                                         id="btnEditComment"
                                         className='btn btn-ghost'
                                     >
-                                        Edit Comment
+                                        <Link to={`/recipes/${recipeId}/comments/${comment._id}/edit`}>Edit Comment</Link>
                                     </button>
                                     <button
                                         type="button"
