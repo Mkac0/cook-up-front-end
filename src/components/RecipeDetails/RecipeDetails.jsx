@@ -27,8 +27,10 @@ const RecipeDetails = (props) => {
 
     if (!recipe) {
         return (
-            loading
-        );
+            <div>
+                loading
+            </div>
+        )
     }
 
     console.log("recipe = ",recipe);
