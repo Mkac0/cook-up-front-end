@@ -104,6 +104,12 @@ const RecipeDetails = (props) => {
                 <article className='res-card section-card'>
                     <div className='section-title-row'>
                         <h2 className='section-title'>Comments</h2>
+                        <Link
+                            className="btn btn-ghost"
+                            to={`/recipes/${recipeId}/comments/new`}
+                        >
+                        +
+                        </Link>
                     </div>
                     <ul className='list-reset comments-list'>
                         {recipe.comments.map((comment) => (
@@ -131,16 +137,9 @@ const RecipeDetails = (props) => {
                             </li>
                         ))}
                     </ul>
-                    <p className="add-comment">Add a comment.</p>
                 </article>
             </section>
             <div className="recipe-details-actions">
-                <Link
-                    className="btn btn-ghost"
-                    to={`/recipes/${recipeId}/comments/new`}
-                >
-                    Add Comment
-                </Link>
                 <button
                     className="btn btn-primary"
                     onClick={() => props.handleDeleteRecipe(recipeId)}
