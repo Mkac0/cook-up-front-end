@@ -33,7 +33,7 @@ const RecipeDetails = (props) => {
         )
     }
 
-    console.log("recipe = ", recipe);
+    //console.log("recipe = ", recipe);
     return (
         <main className='res-page'>
             <header className='res-card recipe-details'>
@@ -83,13 +83,13 @@ const RecipeDetails = (props) => {
                     <h2 className='section-title'>Instructions:</h2>
                     <ol className='steps-list'>
                         {recipe.instructions.map((instruction, index) => (
-                        <li key={instruction.step || index}>
-                            <div className="instruction-text">
-                            {instruction.description 
-                                ? instruction.description 
-                                : JSON.stringify(instruction)}
-                            </div>
-                        </li>
+                            <li key={instruction.step || index}>
+                                <div className="instruction-text">
+                                    {instruction.description
+                                        ? instruction.description
+                                        : JSON.stringify(instruction)}
+                                </div>
+                            </li>
                         ))}
                     </ol>
                 </article>

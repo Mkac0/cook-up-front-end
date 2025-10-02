@@ -6,11 +6,13 @@ const CommentForm = (props) => {
     const { recipeId, commentId } = useParams();
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        comments: '',
+        text: '',
     });
-    const handleChange = (evt) => {
+
+    const handleChange = (evt) => {        
         setFormData({ ...formData, [evt.target.name]: evt.target.value });
     };
+
     const handleSubmit = (evt) => {
         evt.preventDefault();
         if (recipeId && commentId) {
@@ -19,27 +21,38 @@ const CommentForm = (props) => {
         else {
             props.handleAddComment(recipeId, formData);
         }
-        setFormData({ comments: '' });
+        setFormData({ text: '' });
         navigate(`/recipes/${recipeId}`);;
     };
+
     const handleCancel = () => {
         navigate(`/recipes/${recipeId}`);
     };
+
+    useEffect(() => {
+        const fetchRecipe = async () => {
+            const recipeData = await recipeService.show(recipeId);
+            // Find comment in fetched recipe data
+            setFormData(recipeData.comments.find((comment) => comment._id === commentId));
+        };
+        if (recipeId && commentId) fetchRecipe();
+    }, [recipeId, commentId]);
+
     return (
         <main className="add-comment-page">
             <div className="add-comment-card">
                 <h2>Add Your Comment</h2>
                 <form className="form" onSubmit={handleSubmit}>
                     <div className="form-row">
-                        <label className="label" htmlFor="comments-input">Comment</label>
+                        <label className="label" htmlFor="text-input">Comment</label>
                         <textarea
                             className="input"
                             required
                             rows={5}
                             cols={20}
-                            name="comments"
-                            id="comments-input"
-                            value={formData.comments}
+                            name="text"
+                            id="text-input"
+                            value={formData.text}
                             onChange={handleChange}
                             placeholder="Write your comment..."
                         />
