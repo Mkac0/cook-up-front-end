@@ -15,8 +15,9 @@ const CommentForm = (props) => {
     };
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log('added new comment');        
         props.handleUpdateComment(recipeId, formData);
+        setFormData({ comments: '' });
+        navigate(`/recipes/${recipeId}`);
     };
     const handleCancel = () => {
         navigate(`/recipes/${recipeId}`); // Or navigate(-1) to go back
