@@ -34,14 +34,12 @@ const Dashboard = () => {
             Saved Recipes <span className="saved-recipes">{recipes.length}</span>
           </p>
         </div>
-        <Link className="btn btn-primary" to="/recipe/new">Generate Recipe</Link>
       </header>
 
     {loading ? (
       <div className="recipe-grid">
         {Array.from({ length: 6 }).map((_, i) => (
           <div key={i} className="recipe-card loading">
-            <div className="recipe-card-img" />
             <div className="recipe-card-name">
               <div className="loading-line width1" />
               <div className="loading-line width2" />
@@ -69,6 +67,7 @@ const Dashboard = () => {
         ))}
       </ul>
       )}
+      <Link className="btn btn-primary" to="/recipe/new">Generate Recipe</Link>
     </main>
   );
 };
