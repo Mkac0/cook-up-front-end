@@ -118,7 +118,7 @@ const RecipeDetails = (props) => {
                                     <button
                                         type="button"
                                         id="btnDeleteComment"
-                                        onClick={() => handleDeleteComment(comment._id)}
+                                        onClick={() => props.handleDeleteComment(recipe._id, comment._id)}
                                         className='btn btn-primary'
                                     >
                                         Delete Comment

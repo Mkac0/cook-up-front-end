@@ -37,11 +37,17 @@ const App = () => {
     navigate(`/recipe/${recipeId}`);
   };
   const handleAddComment = async (recipeId, commentFormData) => {
-    console.log("commentFormData=", commentFormData);
+    //console.log("commentFormData=", commentFormData);
     const updatedComment = await recipeService.createComment(recipeId, commentFormData);
     setRecipes(recipes.map((recipe) => (recipeId === recipe._id ? updatedComment : recipe)));
     navigate(`/recipes/${recipeId}`);
   };
+  const handleDeleteComment = async (recipeId, commentFormData) => {
+    const deletedComment = await recipeService.deleteComment(recipeId, commentFormData);
+    //setRecipes(recipes.map((recipe) => (recipeId === recipe._id ? updatedComment : recipe)));
+    window.location.reload(true);
+  };
+
   return (
     <>
       <NavBar />
@@ -52,7 +58,7 @@ const App = () => {
             <Route path='/recipes' element={<RecipeList />} />
             <Route
               path='/recipes/:recipeId'
-              element={<RecipeDetails handleDeleteRecipe={handleDeleteRecipe} />}
+              element={<RecipeDetails handleDeleteRecipe={handleDeleteRecipe} handleDeleteComment={handleDeleteComment} />}
             />
             <Route path='/recipe/new' element={<RecipeForm handleAddRecipe={handleAddRecipe} />} />
             <Route
