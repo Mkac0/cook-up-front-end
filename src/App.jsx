@@ -36,11 +36,11 @@ const App = () => {
     setRecipes(recipes.map((recipe) => (recipeId === recipe._id ? updatedRecipe : recipe)));
     navigate(`/recipe/${recipeId}`);
   };
-  const handleUpdateComment = async (recipeId, commentFormData) => {
+  const handleAddComment = async (recipeId, commentFormData) => {
     console.log("commentFormData=", commentFormData);
     const updatedComment = await recipeService.createComment(recipeId, commentFormData);
     setRecipes(recipes.map((recipe) => (recipeId === recipe._id ? updatedComment : recipe)));
-    navigate(`/recipes/${recipeId}/comments/new`);
+    navigate(`/recipes/${recipeId}`);
   };
   return (
     <>
@@ -59,7 +59,7 @@ const App = () => {
               path='/recipes/:recipeId/edit'
               element={<RecipeForm handleUpdateRecipe={handleUpdateRecipe} />}
             />
-            <Route path="/recipes/:recipeId/comments/new" element={<CommentForm handleUpdateComment={handleUpdateComment} />} />
+            <Route path="/recipes/:recipeId/comments/new" element={<CommentForm handleAddComment={handleAddComment} />} />
           </>
         ) : (
           <>
