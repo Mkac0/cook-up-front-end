@@ -41,10 +41,9 @@ const CommentForm = (props) => {
     return (
         <main className="add-comment-page">
             <div className="add-comment-card">
-                <h2>Add Your Comment</h2>
+                <h2>Add Comment</h2>
                 <form className="form" onSubmit={handleSubmit}>
                     <div className="form-row">
-                        <label className="label" htmlFor="text-input">Comment</label>
                         <textarea
                             className="input"
                             required

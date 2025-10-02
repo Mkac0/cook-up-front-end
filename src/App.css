@@ -351,12 +351,6 @@ body {
   background: rgba(255,255,255,.06);
   margin-top: .5rem;  
 }
-.width1 {
-  width: 70%;
-}
-.width2 {
-  width: 40%;
-}
 
 .recipe-details {
   position: relative;
@@ -529,21 +523,16 @@ body {
 
 .add-comment-card h2 {
   text-align: center;
-  font-size: clamp(1.5rem, 1.1rem + 1vw, 2rem);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(90deg, var(--brand), var(--brand-600));
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #6372f5;
 }
 
 .add-comment-card .form-row {
   display: grid;
   gap: 0.75rem;
   margin-bottom: 1rem;
-}
-
-.add-comment-card .label {
-  font-weight: 600;
-  color: var(--brand-600);
 }
 
 .add-comment-card .input,
@@ -554,20 +543,15 @@ body {
   font-size: 1rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(148, 163, 184, 0.3);
-  color: var(--text);
-  transition: all 0.2s ease;
 }
 
 .add-comment-card .input:focus,
 .add-comment-card textarea:focus {
-  border-color: var(--brand);
-  box-shadow: var(--ring);
   background: rgba(255, 255, 255, 0.06);
 }
 
 .add-comment-card textarea {
   min-height: 120px;
-  resize: vertical;
   line-height: 1.5;
 }
 

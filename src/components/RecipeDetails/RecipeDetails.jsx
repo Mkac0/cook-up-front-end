@@ -123,7 +123,7 @@ const RecipeDetails = (props) => {
                                         id="btnEditComment"
                                         className='btn btn-ghost'
                                     >
-                                        <Link to={`/recipes/${recipeId}/comments/${comment._id}/edit`}>Edit Comment</Link>
+                                        <Link to={`/recipes/${recipeId}/comments/${comment._id}/edit`}>Edit</Link>
                                     </button>
                                     <button
                                         type="button"
@@ -131,7 +131,7 @@ const RecipeDetails = (props) => {
                                         onClick={() => props.handleDeleteComment(recipe._id, comment._id)}
                                         className='btn btn-primary'
                                     >
-                                        Delete Comment
+                                        Delete
                                     </button>
                                 </div>
                             </li>
