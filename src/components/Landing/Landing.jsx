@@ -87,11 +87,6 @@ const Landing = () => {
         <footer className="site-footer">
           <div className="container footer-inner">
             <p>© {new Date().getFullYear()} CookUp</p>
-            <nav className="footer-nav" aria-label="Footer">
-              <a href="/about">About</a>
-              <a href="/contact">Contact</a>
-              <a href="/privacy">Privacy</a>
-            </nav>
           </div>
         </footer>
     </main>

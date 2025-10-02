@@ -278,6 +278,9 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
+  max-width: 900px;
+  margin-top: 2rem;
+  justify-items: stretch;
 }
 
 .recipe-card {
@@ -286,6 +289,7 @@ body {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
+  width: 100%;
 }
 
 .recipe-card-link {
@@ -326,32 +330,6 @@ body {
   opacity: 1;
 }
 
-.no-recipes {
-  text-align: center;
-  padding: 3rem 1rem;
-  border: 1px dashed rgba(148,163,184,.35);
-  border-radius: var(--radius);
-  background: color-mix(in oklab, var(--bg-elev) 85%, white 15%);
-}
-.no-recipes h3 {
-  margin: 0 0 .5rem;
-}
-.no-recipes p {
-  margin: 0 0 1rem;
-  color: var(--muted);
-}
-
-.loading {
-  position: relative; 
-}
-
-.loading-line {
-  height: 10px;
-  border-radius: 6px;
-  background: rgba(255,255,255,.06);
-  margin-top: .5rem;  
-}
-
 .recipe-details {
   position: relative;
   overflow: hidden;
@@ -376,13 +354,6 @@ body {
   gap: .5rem;
   flex-wrap: wrap;
   align-items: center;
-}
-
-.recipe-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: .75rem;
-  margin-top: 1rem;
 }
 
 .recipe-item {

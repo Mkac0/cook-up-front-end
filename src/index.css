@@ -382,16 +382,3 @@ button:focus-visible {
   justify-content:space-between; 
   gap:12px; 
 }
-
-.footer-nav { 
-  display:flex; 
-  gap:12px; 
-}
-
-.footer-nav a { 
-  color:#9aa0a6; 
-}
-
-.footer-nav a:hover { 
-  color:#e9e9ee; 
-}
