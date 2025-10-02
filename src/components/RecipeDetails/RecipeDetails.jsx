@@ -82,10 +82,14 @@ const RecipeDetails = (props) => {
                 <article className='res-card section-card'>
                     <h2 className='section-title'>Instructions:</h2>
                     <ol className='steps-list'>
-                        {recipe.instructions.map((instruction) => (
-                            <li key={instruction.step}>
-                                <div className='instuction-text'>{instruction.description}</div>
-                            </li>
+                        {recipe.instructions.map((instruction, index) => (
+                        <li key={instruction.step || index}>
+                            <div className="instruction-text">
+                            {instruction.description 
+                                ? instruction.description 
+                                : JSON.stringify(instruction)}
+                            </div>
+                        </li>
                         ))}
                     </ol>
                 </article>
