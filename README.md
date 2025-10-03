@@ -1,15 +1,11 @@
-# 🍳 Cook'Up
+# Cook'Up
 ![Cook'Up](https://i.imgur.com/R1wX28G.png)
 
 Cook'Up is a MERN Stack CRUD application that helps users create recipes with the power of AI. Simply provide the ingredients you have on hand, and the app will generate the perfect recipe tailored for you.
 
 This project was built to combine **AI-powered creativity** with a clean, user-friendly interface for food lovers who want to expand their culinary skills or make the most out of leftover ingredients.
 
-+ [Deployed project](https://cookupga.netlify.app/)
-+ [Front-End GitHub Repo](https://github.com/Mkac0/cook-up-front-end)
-+ [Back-End GitHub Repo](https://github.com/Mkac0/cook-up-back-end)
-+ [Project planning](https://trello.com/b/vD8xdvUt/cookup)
-+ [Git Reference](https://github.com/seb-justicia/express-api-jwt-auth-template)
+[Deployed project](https://cookupga.netlify.app/) [Front-End GitHub Repo](https://github.com/Mkac0/cook-up-front-end) [Back-End GitHub Repo](https://github.com/Mkac0/cook-up-back-end) [Project planning](https://trello.com/b/vD8xdvUt/cookup) [Git Reference](https://github.com/seb-justicia/express-api-jwt-auth-template)
 
 
 ## Why Cook'Up?
@@ -22,30 +18,34 @@ Cook'Up is perfect for anyone who wants to get creative in the kitchen. Whether 
 
 We use the `gemini-2.5-flash` model for recipe text generation. The backend server calls this API to create recipes dynamically. When a user enters “tomatoes, pasta, garlic,” the API suggests a pasta dish with instructions.
 
-***Example***
-```
-const prompt = `
-    You are a world-class chef. Your task is to create a delicious and easy-to-follow recipe.
-    Please use the following ingredients: ${req.body.contents}.
-    The recipe should be for:
-    - Meal Type:  ${req.body.meal_type === 'Any' ? 'any meal' : req.body.meal_type}
-    - Dietary Preference: ${req.body.dietary_preference === 'None' ? 'no specific dietary restrictions' : req.body.dietary_preference}
-    Generate a creative and appealing recipe. If some key ingredients are missing for a classic dish, feel free to suggest a creative alternative or a simpler version. The instructions should be clear for a home cook.
-    Return the recipe with an image.
-    Return the recipe in the specified JSON format.
+    ***Example***
 
-    const response = await ai.models.generateContent
-    model: "gemini-2.5-flash",
-    contents: prompt,
-    config:{
-       responseMimeType: 'application/json',
-        temperature: 0.8,
-        topP: 0.95,
-    }
-```
+    ```
+    const prompt =
+        You are a world-class chef. Your task is to create a delicious and easy-to-follow recipe.
+        Please use the following ingredients: ${req.body.contents}.
+        The recipe should be for:
+        - Meal Type:  ${req.body.meal_type === 'Any' ? 'any meal' : req.body.meal_type}
+        - Dietary Preference: ${req.body.dietary_preference === 'None' ? 'no specific dietary
+        restrictions' : req.body.dietary_preference}
+        Generate a creative and appealing recipe. If some key ingredients are missing for a 
+        classic dish, feel free to suggest a creative alternative or a simpler version. 
+        The instructions should be clear for a home cook.
+        Return the recipe with an image.
+        Return the recipe in the specified JSON format.
+
+        const response = await ai.models.generateContent
+        model: "gemini-2.5-flash",
+        contents: prompt,
+        config:{
+        responseMimeType: 'application/json',
+            temperature: 0.8,
+            topP: 0.95,
+        }
+    ```
 The above example lets AI know its role and how it should respond.
 
-    For more information on Google Gemini Developer API, visit [Gemini API](https://ai.google.dev/gemini-api/docs).
+For more information on Google Gemini Developer API, visit [Gemini API](https://ai.google.dev/gemini-api/docs).
 
 
 ### React
@@ -103,7 +103,7 @@ import { TailSpin } from "react-loader-spinner";
     }, 1000); // example delay
     };
     ```
-    
+
     For more information on React Loader Spinner, visit [MDN: Load Spinner](https://www.npmjs.com/package/react-loader-spinner).
 
 
@@ -157,21 +157,22 @@ import { TailSpin } from "react-loader-spinner";
     For more information on JWT Authentication (localStorage), visit [MDN: loaclStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 
-## 🛠️ Technologies Used
+### Technologies Used
+
+***Frontend***
++ React & React Router
 + Vite
 + JavaScript
-### Frontend
-+ React & React Router
 + CSS
-### Backend
+***Backend***
 + Node.js
 + Express.js
-### Database
+***Database***
 + Mongo DB
 + Mongoose
-### AI Integration
+***AI Integration***
 + GeminiAI API
-### App Deployment
+***App Deployment***
 + Heroku
 + Netlify
 
