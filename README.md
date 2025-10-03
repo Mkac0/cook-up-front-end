@@ -22,14 +22,17 @@ We use the `gemini-2.5-flash` model for recipe text generation. The backend serv
 
     ```
     const prompt =
-        You are a world-class chef. Your task is to create a delicious and easy-to-follow recipe.
+        You are a world-class chef. Your task is to create a delicious and 
+        easy-to-follow recipe.
         Please use the following ingredients: ${req.body.contents}.
         The recipe should be for:
-        - Meal Type:  ${req.body.meal_type === 'Any' ? 'any meal' : req.body.meal_type}
-        - Dietary Preference: ${req.body.dietary_preference === 'None' ? 'no specific dietary
-        restrictions' : req.body.dietary_preference}
-        Generate a creative and appealing recipe. If some key ingredients are missing for a 
-        classic dish, feel free to suggest a creative alternative or a simpler version. 
+        - Meal Type:  
+            ${req.body.meal_type === 'Any' ? 'any meal' : req.body.meal_type}
+        - Dietary Preference: ${req.body.dietary_preference === 'None' ? 
+        'no specific dietary restrictions' : req.body.dietary_preference}
+        Generate a creative and appealing recipe. If some key ingredients are 
+        missing for a classic dish, feel free to suggest a creative alternative 
+        or a simpler version. 
         The instructions should be clear for a home cook.
         Return the recipe with an image.
         Return the recipe in the specified JSON format.
@@ -61,7 +64,9 @@ For more information on Google Gemini Developer API, visit [Gemini API](https://
     )}
     ```
 The example above always displays a welcome header, checks if message exists and not just whitespace using `message?.trim()`.
+    
     For more information on Tailwind CSS, visit [Tailwindcss](https://tailwindcss.com).
+    
     For more information on Conditional Rendering, visit [React: Conditional Rendering](https://react.dev/learn/conditional-rendering).
 
 + React Loader Spinner - The `<TailSpin>` component from `react-loader-spinner` library to display a loading animation. When a user submits ingredients, the `<TailSpin>` component shows while waiting for the AI response.
@@ -164,14 +169,18 @@ import { TailSpin } from "react-loader-spinner";
 + Vite
 + JavaScript
 + CSS
+
 ***Backend***
 + Node.js
 + Express.js
+
 ***Database***
 + Mongo DB
 + Mongoose
+
 ***AI Integration***
 + GeminiAI API
+
 ***App Deployment***
 + Heroku
 + Netlify
