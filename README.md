@@ -167,7 +167,7 @@ For more information on Google Gemini Developer API, visit [Gemini API](https://
         },
         ```
 
-    For more information on JWT Authentication (localStorage), visit [MDN: loaclStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+    For more information on JWT Authentication (localStorage), visit [MDN: localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 
 ### Technologies Used
@@ -176,7 +176,7 @@ For more information on Google Gemini Developer API, visit [Gemini API](https://
 + React & React Router
 + Vite
 + JavaScript
-+ CSS
++ Tailwind CSS
 
 ***Backend***
 + Node.js
