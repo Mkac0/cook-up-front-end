@@ -89,6 +89,7 @@ For more information on Google Gemini Developer API, visit [Gemini API](https://
     ```
 
 + React (Hooks: `useState`) - Used to manage form state and loading states during recipe creation and updates. Used for managing state in forms and CRUD operations. 
+    
     ***Example***: 
 
     The `handleSubmit` function handles recipe creation (`handleAddRecipe`) or updating (`handleUpdateRecipe`) while showing a loading spinner until the request completes.
