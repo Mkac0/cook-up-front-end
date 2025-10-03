@@ -5,7 +5,7 @@ Cook'Up is a MERN Stack CRUD application that helps users create recipes with th
 
 This project was built to combine **AI-powered creativity** with a clean, user-friendly interface for food lovers who want to expand their culinary skills or make the most out of leftover ingredients.
 
-[Deployed project](https://cookupga.netlify.app/) [Front-End GitHub Repo](https://github.com/Mkac0/cook-up-front-end) [Back-End GitHub Repo](https://github.com/Mkac0/cook-up-back-end) [Project planning](https://trello.com/b/vD8xdvUt/cookup) [Git Reference](https://github.com/seb-justicia/express-api-jwt-auth-template)
+[Deployed project](https://cookupga.netlify.app/) - [Front-End GitHub Repo](https://github.com/Mkac0/cook-up-front-end) - [Back-End GitHub Repo](https://github.com/Mkac0/cook-up-back-end) - [Project planning](https://trello.com/b/vD8xdvUt/cookup) - [Git Reference](https://github.com/seb-justicia/express-api-jwt-auth-template)
 
 
 ## Why Cook'Up?
