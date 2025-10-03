@@ -56,117 +56,117 @@ For more information on Google Gemini Developer API, visit [Gemini API](https://
 
 + Ract Conditional Rendering - Enables conditional rendering so that messages only appear when content is available. Also, Tailwind CSS - Gives utility-first styling for UI elements such as alerts (`alert`, `alert-error`) to show user-friendly feedback messages.
 
-***Example***:
+    ***Example***:
 
-The example below always displays a welcome header, checks if message exists and not just whitespace using `message?.trim()`.
+    The example below always displays a welcome header, checks if message exists and not just whitespace using `message?.trim()`.
 
-    ```
-    <h1 className="card-title">Welcome back!</h1>
+        ```
+        <h1 className="card-title">Welcome back!</h1>
 
-    {message?.trim() && (
-    <p className="alert alert-error">{message}</p>
-    )}
-    ```
-    
-For more information on Tailwind CSS, visit [Tailwindcss](https://tailwindcss.com).
-    
-For more information on Conditional Rendering, visit [React: Conditional Rendering](https://react.dev/learn/conditional-rendering).
+        {message?.trim() && (
+        <p className="alert alert-error">{message}</p>
+        )}
+        ```
+        
+    For more information on Tailwind CSS, visit [Tailwindcss](https://tailwindcss.com).
+        
+    For more information on Conditional Rendering, visit [React: Conditional Rendering](https://react.dev/learn/conditional-rendering).
 
 + React Loader Spinner - The `<TailSpin>` component from `react-loader-spinner` library to display a loading animation. When a user submits ingredients, the `<TailSpin>` component shows while waiting for the AI response.
 
-***Example***:
+    ***Example***:
 
-```
-import { TailSpin } from "react-loader-spinner";
+    ```
+    import { TailSpin } from "react-loader-spinner";
 
-{isLoading ? (
-  <div style={{ width: "100px", margin: "auto" }}>
-    <TailSpin height="80" width="80" color="#4fa94d" ariaLabel="loading" />
-  </div>
-) : (
-  <div>Recipe Content</div>
-)}
-```
+    {isLoading ? (
+    <div style={{ width: "100px", margin: "auto" }}>
+        <TailSpin height="80" width="80" color="#4fa94d" ariaLabel="loading" />
+    </div>
+    ) : (
+    <div>Recipe Content</div>
+    )}
+    ```
 
 + React (Hooks: `useState`) - Used to manage form state and loading states during recipe creation and updates. Used for managing state in forms and CRUD operations. 
-***Example***: 
+    ***Example***: 
 
-The `handleSubmit` function handles recipe creation (`handleAddRecipe`) or updating (`handleUpdateRecipe`) while showing a loading spinner until the request completes.
+    The `handleSubmit` function handles recipe creation (`handleAddRecipe`) or updating (`handleUpdateRecipe`) while showing a loading spinner until the request completes.
 
-    ```
-    const handleSubmit = (evt) => {
-    setIsLoading(true);
-    evt.preventDefault();
+        ```
+        const handleSubmit = (evt) => {
+        setIsLoading(true);
+        evt.preventDefault();
 
-    if (recipeId) {
-        // Update existing recipe
-        props.handleUpdateRecipe(recipeId, formData);
-    } else {
-        // Add new recipe
-        props.handleAddRecipe(formData);
-    }
+        if (recipeId) {
+            // Update existing recipe
+            props.handleUpdateRecipe(recipeId, formData);
+        } else {
+            // Add new recipe
+            props.handleAddRecipe(formData);
+        }
 
-    // Stop loading after request
-    setTimeout(() => {
-        setIsLoading(false);
-    }, 1000); // example delay
-    };
-    ```
+        // Stop loading after request
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 1000); // example delay
+        };
+        ```
 
-For more information on React Loader Spinner, visit [MDN: Load Spinner](https://www.npmjs.com/package/react-loader-spinner).
+    For more information on React Loader Spinner, visit [MDN: Load Spinner](https://www.npmjs.com/package/react-loader-spinner).
 
 
 ### JavaScript
 
 + JavaScript (JSON.stringify) - Used as a fallback to safely display full JSON data if an instruction is missing its `description` field.
 
-***Example***:
+    ***Example***:
 
-    ```
-    <ul>
-    {recipe.instructions.map((instruction, index) => (
-        <li key={instruction.step || index}>
-        <div className="instruction-text">
-            {instruction.description
-            ? instruction.description
-            : JSON.stringify(instruction)}
-        </div>
-        </li>
-    ))}
-    </ul>
-    ```
+        ```
+        <ul>
+        {recipe.instructions.map((instruction, index) => (
+            <li key={instruction.step || index}>
+            <div className="instruction-text">
+                {instruction.description
+                ? instruction.description
+                : JSON.stringify(instruction)}
+            </div>
+            </li>
+        ))}
+        </ul>
+        ```
 
-For more information on JavaScript JSON.stringify, visit [MDN: JSON.stringify](https://www.npmjs.com/package/json-stringify-pretty-compact).
+    For more information on JavaScript JSON.stringify, visit [MDN: JSON.stringify](https://www.npmjs.com/package/json-stringify-pretty-compact).
 
 + JavaScript Fetch API - Handles asynchronous HTTP requests to the backend. Used to send a `PUT` request to the backend for updating an existing recipe.
 
-***Example***:
+    ***Example***:
 
-    ```
-    const res = await fetch(`${BASE_URL}/${recipeId}/edit`, {
-      method: 'PUT',
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/json',
-      },
-    ```
+        ```
+        const res = await fetch(`${BASE_URL}/${recipeId}/edit`, {
+        method: 'PUT',
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json',
+        },
+        ```
 
-For more information on Fetch API, visit [MDN: Fetch API]((https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)).
+    For more information on Fetch API, visit [MDN: Fetch API]((https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)).
 
 + JWT Authentication (localStorage) - Uses a Bearer token stored in localStorage for secure API requests. Stores the authentication token, which is included in the request headers for secure access to protected routes.
 
-***Example***:
+    ***Example***:
 
-    ```
-    const res = await fetch(`${BASE_URL}/${recipeId}/edit`, {
-      method: 'PUT',
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/json',
-      },
-    ```
+        ```
+        const res = await fetch(`${BASE_URL}/${recipeId}/edit`, {
+        method: 'PUT',
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json',
+        },
+        ```
 
-For more information on JWT Authentication (localStorage), visit [MDN: loaclStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+    For more information on JWT Authentication (localStorage), visit [MDN: loaclStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 
 ### Technologies Used
