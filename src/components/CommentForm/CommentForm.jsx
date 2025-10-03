@@ -32,7 +32,6 @@ const CommentForm = (props) => {
     useEffect(() => {
         const fetchRecipe = async () => {
             const recipeData = await recipeService.show(recipeId);
-            // Find comment in fetched recipe data
             setFormData(recipeData.comments.find((comment) => comment._id === commentId));
         };
         if (recipeId && commentId) fetchRecipe();

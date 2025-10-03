@@ -36,7 +36,7 @@ const SignInForm = () => {
         <header className="card-header">
           <h1 className="card-title">Welcome back!</h1>
           {message?.trim() && (
-            <p className="alert alert-error" role="alert">{message}</p>
+            <p className="alert alert-error">{message}</p>
           )}
         </header>
 
