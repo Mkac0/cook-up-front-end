@@ -18,7 +18,9 @@ Cook'Up is perfect for anyone who wants to get creative in the kitchen. Whether 
 
 We use the `gemini-2.5-flash` model for recipe text generation. The backend server calls this API to create recipes dynamically. When a user enters “tomatoes, pasta, garlic,” the API suggests a pasta dish with instructions.
 
-    ***Example***
+***Example***:
+
+The example below lets AI know its role and how it should respond.
 
     ```
     const prompt =
@@ -46,7 +48,6 @@ We use the `gemini-2.5-flash` model for recipe text generation. The backend serv
             topP: 0.95,
         }
     ```
-The above example lets AI know its role and how it should respond.
 
 For more information on Google Gemini Developer API, visit [Gemini API](https://ai.google.dev/gemini-api/docs).
 
@@ -55,7 +56,10 @@ For more information on Google Gemini Developer API, visit [Gemini API](https://
 
 + Ract Conditional Rendering - Enables conditional rendering so that messages only appear when content is available. Also, Tailwind CSS - Gives utility-first styling for UI elements such as alerts (`alert`, `alert-error`) to show user-friendly feedback messages.
 
-    ***Example***:
+***Example***:
+
+The example below always displays a welcome header, checks if message exists and not just whitespace using `message?.trim()`.
+
     ```
     <h1 className="card-title">Welcome back!</h1>
 
@@ -63,15 +67,15 @@ For more information on Google Gemini Developer API, visit [Gemini API](https://
     <p className="alert alert-error">{message}</p>
     )}
     ```
-The example above always displays a welcome header, checks if message exists and not just whitespace using `message?.trim()`.
     
-    For more information on Tailwind CSS, visit [Tailwindcss](https://tailwindcss.com).
+For more information on Tailwind CSS, visit [Tailwindcss](https://tailwindcss.com).
     
-    For more information on Conditional Rendering, visit [React: Conditional Rendering](https://react.dev/learn/conditional-rendering).
+For more information on Conditional Rendering, visit [React: Conditional Rendering](https://react.dev/learn/conditional-rendering).
 
 + React Loader Spinner - The `<TailSpin>` component from `react-loader-spinner` library to display a loading animation. When a user submits ingredients, the `<TailSpin>` component shows while waiting for the AI response.
 
 ***Example***:
+
 ```
 import { TailSpin } from "react-loader-spinner";
 
@@ -85,9 +89,9 @@ import { TailSpin } from "react-loader-spinner";
 ```
 
 + React (Hooks: `useState`) - Used to manage form state and loading states during recipe creation and updates. Used for managing state in forms and CRUD operations. 
-    ***Example***: 
+***Example***: 
 
-    The `handleSubmit` function handles recipe creation (`handleAddRecipe`) or updating (`handleUpdateRecipe`) while showing a loading spinner until the request completes.
+The `handleSubmit` function handles recipe creation (`handleAddRecipe`) or updating (`handleUpdateRecipe`) while showing a loading spinner until the request completes.
 
     ```
     const handleSubmit = (evt) => {
@@ -109,14 +113,15 @@ import { TailSpin } from "react-loader-spinner";
     };
     ```
 
-    For more information on React Loader Spinner, visit [MDN: Load Spinner](https://www.npmjs.com/package/react-loader-spinner).
+For more information on React Loader Spinner, visit [MDN: Load Spinner](https://www.npmjs.com/package/react-loader-spinner).
 
 
 ### JavaScript
 
 + JavaScript (JSON.stringify) - Used as a fallback to safely display full JSON data if an instruction is missing its `description` field.
 
-    ***Example 1***:
+***Example***:
+
     ```
     <ul>
     {recipe.instructions.map((instruction, index) => (
@@ -131,11 +136,12 @@ import { TailSpin } from "react-loader-spinner";
     </ul>
     ```
 
-    For more information on JavaScript JSON.stringify, visit [MDN: JSON.stringify](https://www.npmjs.com/package/json-stringify-pretty-compact).
+For more information on JavaScript JSON.stringify, visit [MDN: JSON.stringify](https://www.npmjs.com/package/json-stringify-pretty-compact).
 
 + JavaScript Fetch API - Handles asynchronous HTTP requests to the backend. Used to send a `PUT` request to the backend for updating an existing recipe.
 
-    ***Example***:
+***Example***:
+
     ```
     const res = await fetch(`${BASE_URL}/${recipeId}/edit`, {
       method: 'PUT',
@@ -145,11 +151,12 @@ import { TailSpin } from "react-loader-spinner";
       },
     ```
 
-    For more information on Fetch API, visit [MDN: Fetch API]((https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)).
+For more information on Fetch API, visit [MDN: Fetch API]((https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)).
 
 + JWT Authentication (localStorage) - Uses a Bearer token stored in localStorage for secure API requests. Stores the authentication token, which is included in the request headers for secure access to protected routes.
 
-    ***Example***:
+***Example***:
+
     ```
     const res = await fetch(`${BASE_URL}/${recipeId}/edit`, {
       method: 'PUT',
@@ -159,7 +166,7 @@ import { TailSpin } from "react-loader-spinner";
       },
     ```
 
-    For more information on JWT Authentication (localStorage), visit [MDN: loaclStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+For more information on JWT Authentication (localStorage), visit [MDN: loaclStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 
 ### Technologies Used
